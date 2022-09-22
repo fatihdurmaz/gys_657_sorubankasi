@@ -8,8 +8,8 @@ class Summary {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['ozet_bilgi'] = this.ozetBilgi;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['ozet_bilgi'] = ozetBilgi;
     return data;
   }
 }

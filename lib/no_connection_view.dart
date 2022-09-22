@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class NoConnectionView extends StatelessWidget {
   const NoConnectionView({Key? key}) : super(key: key);
@@ -9,12 +10,8 @@ class NoConnectionView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('İnternet Bağlantısı Yok'),
       ),
-      body: const Center(
-        child: Text('Bağlantı YOK',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 40,
-            )),
+      body: Container(
+        child: Lottie.asset('assets/json/animation.json'),
       ),
     );
   }
