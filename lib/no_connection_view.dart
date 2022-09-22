@@ -10,8 +10,10 @@ class NoConnectionView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('İnternet Bağlantısı Yok'),
       ),
-      body: Container(
-        child: Lottie.asset('assets/json/animation.json'),
+      body: Center(
+        child: Container(
+          child: Lottie.asset('assets/json/animation.json'),
+        ),
       ),
     );
   }

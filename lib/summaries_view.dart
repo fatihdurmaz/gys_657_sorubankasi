@@ -53,9 +53,11 @@ class _SummariesViewState extends State<SummariesView> {
                   title: Text(
                     snapshot.data[index].ozetBilgi,
                     textAlign: TextAlign.justify,
-                    style: const TextStyle(fontStyle: FontStyle.italic),
+                    style: const TextStyle(
+                      fontSize: 13,
+                    ),
                   ),
-                  leading: const Icon(Icons.star),
+                  leading: Chip(label: Text('${index + 1}')),
                 ),
                 separatorBuilder: (context, int index) {
                   return const Divider(
