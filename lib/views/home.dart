@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:gys_657_sorubankasi/exam_view.dart';
-import 'package:gys_657_sorubankasi/no_connection_view.dart';
-import 'package:gys_657_sorubankasi/subject_view.dart';
-import 'package:gys_657_sorubankasi/summaries_view.dart';
+import 'package:gys_657_sorubankasi/views/subject_view.dart';
+import 'package:gys_657_sorubankasi/views/summaries_view.dart';
+import 'package:gys_657_sorubankasi/widgets/no_connection_view.dart';
+
+import 'exam_view.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
