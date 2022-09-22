@@ -34,6 +34,7 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
+    // widgetta girildiği anki
     super.initState();
 
     _connectivitySubscription =
@@ -42,6 +43,7 @@ class _HomeState extends State<Home> {
 
   @override
   void dispose() {
+    // widgettan çıkıldığı anki
     super.dispose();
     _connectivitySubscription.cancel();
   }

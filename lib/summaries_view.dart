@@ -37,7 +37,6 @@ class _SummariesViewState extends State<SummariesView> {
         title: const Text('Özet Bilgiler'),
       ),
       body: Container(
-        padding: const EdgeInsets.all(10.0),
         child: FutureBuilder(
           future: getRequest(),
           builder: (BuildContext ctx, AsyncSnapshot snapshot) {
@@ -50,14 +49,15 @@ class _SummariesViewState extends State<SummariesView> {
             } else {
               return ListView.separated(
                 itemCount: snapshot.data.length,
-                itemBuilder: (ctx, int index) => ListTile(
+                itemBuilder: (BuildContext context, int index) => ListTile(
                   title: Text(
                     snapshot.data[index].ozetBilgi,
                     textAlign: TextAlign.justify,
-                    style: const TextStyle(),
+                    style: const TextStyle(fontStyle: FontStyle.italic),
                   ),
+                  leading: const Icon(Icons.star),
                 ),
-                separatorBuilder: (BuildContext context, int index) {
+                separatorBuilder: (context, int index) {
                   return const Divider(
                     color: Colors.black,
                   );
