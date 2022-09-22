@@ -27,21 +27,25 @@ class _SummariesViewState extends State<SummariesView> {
               );
             } else {
               return ListView.separated(
+                padding: const EdgeInsets.all(10),
                 itemCount: snapshot.data.length,
-                itemBuilder: (BuildContext context, int index) => ListTile(
-                  title: Text(
-                    snapshot.data[index].ozetBilgi,
-                    textAlign: TextAlign.justify,
-                    style: const TextStyle(
-                      fontSize: 13,
-                    ),
+                itemBuilder: (BuildContext context, int index) => Card(
+                  child: Column(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          snapshot.data[index].ozetBilgi,
+                          textAlign: TextAlign.justify,
+                          style: const TextStyle(
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  leading: Chip(label: Text('${index + 1}')),
                 ),
                 separatorBuilder: (context, int index) {
-                  return const Divider(
-                    color: Colors.black,
-                  );
+                  return const Divider();
                 },
               );
             }

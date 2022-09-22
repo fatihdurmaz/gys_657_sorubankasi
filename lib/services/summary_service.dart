@@ -1,10 +1,10 @@
 import 'package:gys_657_sorubankasi/models/summary.dart';
 import 'dart:convert';
-import '../constants.dart' as Constant;
+import '../constants.dart' as constant;
 import 'package:http/http.dart' as http;
 
 Future<List<Summary>> getSummaries() async {
-  String url = "${Constant.apiBaseURL}api/gyud-ozet-bilgiler/q";
+  String url = "${constant.apiBaseURL}api/gyud-ozet-bilgiler/q";
 
   final response = await http.get(
     Uri.parse(url),
