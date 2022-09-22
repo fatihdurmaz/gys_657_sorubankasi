@@ -15,42 +15,46 @@ class _SummariesViewState extends State<SummariesView> {
       appBar: AppBar(
         title: const Text('Özet Bilgiler'),
       ),
-      body: Container(
-        child: FutureBuilder(
-          future: getSummaries(),
-          builder: (BuildContext ctx, AsyncSnapshot snapshot) {
-            if (snapshot.data == null) {
-              return Container(
-                child: const Center(
-                  child: CircularProgressIndicator(),
+      body: FutureBuilder(
+        future: getSummaries(),
+        builder: (BuildContext ctx, AsyncSnapshot snapshot) {
+          if (snapshot.data == null) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else {
+            return ListView.separated(
+              padding: const EdgeInsets.all(10),
+              itemCount: snapshot.data.length,
+              itemBuilder: (BuildContext context, int index) => Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
                 ),
-              );
-            } else {
-              return ListView.separated(
-                padding: const EdgeInsets.all(10),
-                itemCount: snapshot.data.length,
-                itemBuilder: (BuildContext context, int index) => Card(
-                  child: Column(
-                    children: [
-                      ListTile(
-                        title: Text(
-                          snapshot.data[index].ozetBilgi,
-                          textAlign: TextAlign.justify,
-                          style: const TextStyle(
-                            fontSize: 14,
-                          ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      //contentPadding: const EdgeInsets.all(10),
+                      title: Text(
+                        snapshot.data[index].ozetBilgi,
+                        textAlign: TextAlign.justify,
+                        style: const TextStyle(
+                          fontSize: 14,
                         ),
                       ),
-                    ],
-                  ),
+                      leading: Chip(
+                        label: Text('${index + 1}'),
+                        backgroundColor: Colors.amber,
+                      ),
+                    ),
+                  ],
                 ),
-                separatorBuilder: (context, int index) {
-                  return const Divider();
-                },
-              );
-            }
-          },
-        ),
+              ),
+              separatorBuilder: (context, int index) {
+                return const Divider();
+              },
+            );
+          }
+        },
       ),
     );
   }
