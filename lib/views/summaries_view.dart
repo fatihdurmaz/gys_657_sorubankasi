@@ -27,23 +27,16 @@ class _SummariesViewState extends State<SummariesView> {
               padding: const EdgeInsets.all(10),
               itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context, int index) => Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
                 child: Column(
                   children: [
                     ListTile(
-                      //contentPadding: const EdgeInsets.all(10),
+                      contentPadding: const EdgeInsets.all(10),
                       title: Text(
                         snapshot.data[index].ozetBilgi,
                         textAlign: TextAlign.justify,
                         style: const TextStyle(
                           fontSize: 14,
                         ),
-                      ),
-                      leading: Chip(
-                        label: Text('${index + 1}'),
-                        backgroundColor: Colors.amber,
                       ),
                     ),
                   ],
