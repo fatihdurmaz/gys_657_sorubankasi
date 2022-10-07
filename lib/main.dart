@@ -11,11 +11,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       theme: ThemeData(
-          // Define the default brightness and colors.
-          // primarySwatch: Colors.brown,
-
-          // Define the default font family.
-          ),
+        primarySwatch: Colors.blue,
+      ),
       home: const Home(),
     );
   }

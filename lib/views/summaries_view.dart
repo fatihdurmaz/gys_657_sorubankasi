@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:gys_657_sorubankasi/services/summary_service.dart';
 
@@ -24,23 +26,21 @@ class _SummariesViewState extends State<SummariesView> {
             );
           } else {
             return ListView.separated(
-              padding: const EdgeInsets.all(10),
               itemCount: snapshot.data.length,
-              itemBuilder: (BuildContext context, int index) => Card(
-                child: Column(
-                  children: [
-                    ListTile(
-                      contentPadding: const EdgeInsets.all(10),
-                      title: Text(
-                        snapshot.data[index].ozetBilgi,
-                        textAlign: TextAlign.justify,
-                        style: const TextStyle(
-                          fontSize: 14,
-                        ),
-                      ),
-                    ),
-                  ],
+              itemBuilder: (BuildContext context, int index) => ListTile(
+                title: Text(
+                  snapshot.data[index].ozetBilgi,
+                  textAlign: TextAlign.justify,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontStyle: FontStyle.italic,
+                  ),
                 ),
+                leading: CircleAvatar(
+                    child: Text(
+                  '${index + 1}',
+                  style: const TextStyle(),
+                )),
               ),
               separatorBuilder: (context, int index) {
                 return const Divider();
